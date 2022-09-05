@@ -1,0 +1,71 @@
+.cb {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(25, 26, 31);
+  border-radius: 7px;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.cb::before {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 4px;
+  width: 1px;
+  height: 8px;
+  background-color: rgb(255, 255, 255);
+  transform: rotate(30deg);
+  opacity: 0;
+}
+.cb::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  width: 1px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.cb .custom-cb {
+  display: none;
+}
+.cb .custom-cb + label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.cb.cb-checked-blue {
+  border-radius: 7px;
+  background: rgb(34, 149, 255);
+  box-shadow: 0 0 10px rgba(34, 149, 255, 0.3);
+}
+.cb.cb-checked-blue::before, .cb.cb-checked-blue::after {
+  opacity: 1;
+}
+.cb.cb-checked-blue + label::before {
+  background-color: rgb(34, 149, 255);
+  color: rgb(255, 255, 255);
+}
+
+.cb.cb-checked-red {
+  border-radius: 7px;
+  background: rgb(243, 76, 96);
+  box-shadow: 0 0 10px rgba(243, 76, 96, 0.3);
+}
+.cb.cb-checked-red::before, .cb.cb-checked-red::after {
+  opacity: 1;
+}
+.cb.cb-checked-red + label::before {
+  background-color: rgb(34, 149, 255);
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=Checkbox.css.map */

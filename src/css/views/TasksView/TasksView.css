@@ -1,0 +1,58 @@
+.grid-view-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 300ms ease;
+}
+.grid-view-header .tasks-categories {
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgb(25, 26, 31);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.grid-view-header .tasks-categories li .btn-category {
+  position: relative;
+  height: 100%;
+}
+.grid-view-header .tasks-categories li .btn-category::after {
+  content: "";
+  width: 12px;
+  height: 4px;
+  background-color: rgb(34, 149, 255);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border-radius: 50px;
+  box-shadow: 0 0 4px #2295ff;
+  opacity: 0;
+  transition: all 300ms ease;
+}
+.grid-view-header .tasks-categories li .btn-category:hover {
+  color: rgb(255, 255, 255);
+}
+.grid-view-header .tasks-categories li .btn-category:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px);
+}
+.grid-view-header .tasks-categories li.active .btn-category {
+  color: rgb(255, 255, 255);
+}
+.grid-view-header .tasks-categories li.active .btn-category::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px);
+}
+
+.form-create-task h2 {
+  color: rgb(255, 255, 255);
+}
+
+.form-create-task {
+  position: relative;
+}
+.form-create-task .form-close-btn {
+  position: absolute;
+  right: 2rem;
+}/*# sourceMappingURL=TasksView.css.map */

@@ -1,0 +1,70 @@
+@import "../../Variables";
+
+
+
+.spinner {
+    width: 200px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.circle {
+    width: 1.15rem;
+    height: 1.15rem;
+    background-color: $darkerGrey;
+    border: 2px solid $lightBlue;
+    border-radius: 50%;
+}
+
+.circle-one {
+    margin-right: 0.2rem;
+    animation: move-left-circle 3s infinite;
+}
+
+.circle-two {
+    animation: move-right-circle 3s infinite;
+}
+
+
+
+@keyframes move-left-circle {
+    
+    0% {
+        opacity: 0.25;
+        transform: translateX(0px) scale(1);
+        z-index: -1;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(20px) scale(1.3);
+    }
+
+    100% {
+        transform: translateX(0px) scale(1);
+        opacity: 0.25;
+        z-index: 1;
+    }
+}
+
+@keyframes move-right-circle {
+    
+    0% {
+        opacity: 0.25;
+        transform: translateX(0px) scale(1);
+        z-index: 1;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-31px) scale(1.3);
+    }
+
+    100% {
+        opacity: 0.25;
+        transform: translateX(0px) scale(1);
+        z-index: -1;
+    }
+}

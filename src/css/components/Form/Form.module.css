@@ -1,0 +1,25 @@
+.form {
+    padding:  3rem 2rem;
+    background-color: rgb(18, 19, 23);
+    border-radius: 15px;
+}
+
+.small {
+    width: 400px;
+}
+
+.medium {
+    width: 500px;
+}
+
+.large {
+    width: 600px;
+}
+
+label {
+    position: absolute;
+    top: -22px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgb(89, 89, 102);
+}

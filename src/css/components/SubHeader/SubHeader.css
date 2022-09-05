@@ -1,0 +1,64 @@
+.grid-subheader {
+  display: flex;
+  align-items: center;
+}
+.grid-subheader .grid-days {
+  width: calc(100vw - 500px);
+  transition: all 300ms ease;
+}
+.grid-subheader .grid-days .day-items {
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.grid-subheader .grid-days .day-items .day-item {
+  min-height: 50px;
+  min-width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(25, 26, 31);
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+.grid-subheader .grid-days .day-items .day-item span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgb(136, 136, 138);
+  line-height: 1.2;
+}
+.grid-subheader .grid-days .day-items .day-item small {
+  color: rgb(89, 89, 102);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+.grid-subheader .grid-days .day-items .day-item:hover {
+  background-color: rgb(34, 149, 255);
+}
+.grid-subheader .grid-days .day-items .day-item:hover small, .grid-subheader .grid-days .day-items .day-item:hover span {
+  color: rgb(255, 255, 255);
+}
+.grid-subheader .grid-days .day-items .day-item.current-day {
+  background-color: rgb(34, 149, 255);
+  box-shadow: 0 10px 15px rgba(23, 23, 33, 0.15);
+  border: none;
+}
+.grid-subheader .grid-days .day-items .day-item.current-day span, .grid-subheader .grid-days .day-items .day-item.current-day small {
+  color: rgb(255, 255, 255);
+}
+.grid-subheader .grid-days .day-items .day-item:not(:last-of-type) {
+  margin-right: 0.7rem;
+}
+.grid-subheader .grid-days .grid-items.active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}/*# sourceMappingURL=SubHeader.css.map */

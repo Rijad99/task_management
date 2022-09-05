@@ -1,0 +1,156 @@
+//Variables
+@import "../../Variables";
+
+
+
+.scrollable-container {
+    width: calc(100vw - 500px);
+    height: calc(100vh - 350px);
+    border-radius: 15px;
+    transition: all 300ms ease;
+
+    .content-grid-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: $lightGrey;
+        border-radius: 15px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        user-select: none;
+        cursor: pointer;
+    
+        &:hover {
+            cursor: grabbing;
+        }
+    
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            border-radius: 15px;
+
+            .dates {
+                display: flex;
+                padding: 1rem 1.2rem;
+        
+                li {
+                    position: relative;
+                    width: 405px;
+                    font-size: 0.7rem;
+                    font-weight: 600;
+                    color: $grey;
+
+                    &:before {
+                        content: "";
+                        height: calc(100% - 4rem);
+                        width: 1px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: rgba($grey, 0.05);
+                    }
+
+                    .month {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+
+                    .tasks-list {
+                        width: 100%;
+                        max-height: calc(100vh - 485px);
+                        height: calc(100vh - 485px);
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        padding: 0 1rem;
+                        margin: 1rem 0;
+
+                        .task-item {
+                            width: 100%;
+                            height: 45px;
+                            display: flex;
+                            align-items: center;
+                            background-color: $darkerGrey;
+                            padding: 0 1rem;
+                            border-radius: 15px;
+                            cursor: default;
+
+                            &::before {
+                                display: none;
+                            }
+
+                            .task-title {
+                                transition: all 300ms ease;
+                                max-width: calc(100% - 90px);
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+
+                                &:hover, &:focus {
+                                    text-overflow: unset;
+                                }
+                            }
+
+                            .task-title:focus[contenteditable="true"] {
+                                outline: 1px solid $lightGrey;
+                                padding: 0.25rem 0.5rem;
+                            }
+
+                            .task-title:hover[contenteditable="true"] {
+                                outline: 1px solid $lightGrey;
+                                padding: 0.25rem 0.5rem;
+                            }
+
+                            .task-title.show-save + .save-icon {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+
+                            .save-icon {
+                                position: absolute;
+                                right: 2.7rem;
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 300ms ease;
+                                animation: icon-blinking 1s infinite;
+                            }
+
+                            .btn-task-menu {
+                                position: absolute;
+                                right: 1rem;
+                            }
+
+                            .task-dropdown {
+                                position: absolute;
+                                top: 40px;
+                                right: 0;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .task-item:not(:last-of-type) {
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@keyframes icon-blinking {
+    
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

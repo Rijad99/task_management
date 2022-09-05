@@ -1,0 +1,62 @@
+.notification {
+  position: absolute;
+  right: -15rem;
+  top: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  transition: all 500ms ease;
+  z-index: 1000 !important;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.5);
+  right: -15rem;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateX(0px);
+  right: 2rem;
+}
+
+.notification svg {
+  transform: scale(1.3);
+  margin-top: 0.25rem;
+  cursor: unset;
+}
+
+.notification svg path {
+  fill: rgb(255, 255, 255);
+}
+
+.notification span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  margin-left: 0.5rem;
+}
+
+.notification.success {
+  background-color: rgb(63, 189, 97);
+}
+
+.notification.error {
+  background-color: rgb(243, 76, 96);
+}
+
+.notification.warning {
+  background-color: rgb(255, 135, 23);
+}
+
+.notification.info {
+  background-color: rgb(17, 121, 219);
+}
+.notification.info svg {
+  margin-bottom: 4px;
+}/*# sourceMappingURL=Notification.css.map */

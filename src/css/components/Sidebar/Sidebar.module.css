@@ -1,0 +1,118 @@
+.sidebar {
+  background-color: rgb(25, 26, 31);
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+.sidebar .sidebarlist {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .sidebarlist li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sidebar .sidebarlist li a {
+  display: flex;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .sidebarlist li a svg path {
+  stroke: rgb(136, 136, 138);
+}
+.sidebar .sidebarlist li a:hover svg {
+  filter: drop-shadow(0 0 5px rgba(34, 149, 255, 0.5));
+}
+.sidebar .sidebarlist li a:hover svg path {
+  fill: rgb(34, 149, 255) !important;
+}
+.sidebar .sidebarlist li a.active {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.025);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.sidebar .sidebarlist li a.active svg {
+  filter: drop-shadow(0 0 5px #2295ff);
+}
+.sidebar .sidebarlist li a.active svg path {
+  fill: rgb(34, 149, 255);
+  stroke: transparent !important;
+}
+.sidebar .sidebarlist li a.active + small {
+  left: 3.6rem;
+}
+.sidebar .sidebarlist li a.active:hover {
+  stroke: rgb(23, 23, 33);
+}
+.sidebar .sidebarlist li a.active:after {
+  content: "";
+  position: absolute;
+  bottom: -13px;
+  width: 100%;
+  height: 10px;
+  background-color: rgb(34, 149, 255);
+  border-radius: 75%;
+  filter: blur(7px);
+}
+.sidebar .sidebarlist li.logout {
+  position: absolute;
+  bottom: 0;
+}
+.sidebar .sidebarlist li:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+.sidebar .sidebarlist .hideSidebarBtn {
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  transition: all 300ms ease;
+}
+.sidebar .sidebarlist .hideSidebarBtn:hover path {
+  fill: rgb(34, 149, 255);
+}
+
+.sidebar.sidebarHidden {
+  transform: translateX(0px);
+}
+.sidebar.sidebarHidden .hideSidebarBtn {
+  transform: translateX(45px) rotate(-90deg);
+}
+
+.sidebar.showSidebarMobile {
+  transform: translateX(0px);
+}
+.sidebar.showSidebarMobile .hideSidebarBtn {
+  transform: translateX(-1px) rotate(90deg) !important;
+}
+
+@media screen and (max-width: 1280px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border-bottom-left-radius: unset;
+    border-top-left-radius: unset;
+    transform: translateX(-98px);
+    z-index: 1;
+  }
+  .sidebar .sidebarlist .hideSidebarBtn {
+    right: -42px;
+    transform: rotate(-90deg);
+  }
+  .sidebar.sidebarHidden .hideSidebarBtn {
+    right: -40px;
+    transform: rotate(-270deg);
+  }
+}/*# sourceMappingURL=Sidebar.module.css.map */

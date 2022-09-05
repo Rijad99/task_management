@@ -1,0 +1,476 @@
+//Variables 
+@import "../../Variables";
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns:  90px auto 280px;
+    grid-template-rows: 100px 100px auto;
+    grid-template-areas: 
+        "grid-sidebar grid-header grid-rightsidebar"
+        "grid-sidebar grid-subheader grid-rightsidebar"
+        "grid-sidebar grid-view grid-rightsidebar";
+    width: 100%;
+    height: 100vh;
+    transition: all 300ms ease;
+
+    .grid-header {
+        grid-area: grid-header;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        transition: all 300ms ease;
+
+        .title {
+            color: $white;
+            font-weight: 500;
+        }
+    }
+
+    .grid-subheader {
+        grid-area: grid-subheader;
+        transition: all 300ms ease;
+    }
+
+    .grid-sidebar {
+        grid-area: grid-sidebar;
+        transition: all 300ms ease;
+    }
+
+    .grid-view {
+        grid-area: grid-view;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: hidden;
+        padding-bottom: unset;
+        transition: all 300ms ease;
+    }
+
+    .grid-rightsidebar {
+        grid-area: grid-rightsidebar;
+        transition: all 300ms ease;
+    }
+}
+
+
+
+//If grid has just left class for expansion when sidebar is hidden
+.grid.expanded-left {
+    transform: translateX(-110px);
+
+    .grid-view {
+
+        .grid-view-header {
+            width: 100%;
+        }
+
+        .scrollable-container {
+            width: calc(100vw - 389px);
+        }
+    }
+
+    .grid-header {
+        width: 100%;
+    }
+
+    .grid-subheader {
+        
+        .grid-days {
+            width: calc(100vw - 390px);
+        }
+    }
+
+    .grid-rightsidebar {
+        transform: translateX(0px);
+    }
+}
+
+
+
+//If grid has just right class for expansion when rightsidebar is hidden
+.grid.expanded-right {
+    transform: translateX(0px);
+
+    .grid-view {
+        width: calc(100% + 160px);
+
+        .scrollable-container {
+            width: calc(100vw - 195px);
+        }
+    }
+
+    .grid-header {
+        width: 100%;
+    }
+
+    .grid-subheader {
+        
+        .grid-days {
+            width: calc(100vw - 195px);
+        }
+    }
+
+    .grid-rightsidebar {
+        transform: translateX(-1px) !important;
+    }
+}
+
+
+
+//If grid has both classes for expansion when both sidebars are hidden
+.grid.expanded-left.expanded-right {
+    transform: translate(-110px);
+
+    .grid-subheader {
+        
+        .grid-days {
+            width: calc(100vw - 90px);
+        }
+    }
+
+    .grid-view {
+
+        .grid-view-header {
+            width: calc(100% - 160px)
+        }
+
+        .scrollable-container {
+            width: calc(100vw - 90px);
+        }
+    }
+
+    .grid-rightsidebar {
+        transform: translateX(3px) !important;
+    }
+}
+
+
+
+//Responsivity 
+
+//1280px 
+@media screen and (max-width: 1280px) {
+    
+    .grid {
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "grid-header"
+            "grid-subheader"
+            "grid-view";
+        width: 100%;
+        height: 100%;
+        padding-top: unset;
+        padding-bottom: unset;
+        transform: translateX(0px);
+
+        .grid-sidebar {
+            grid-area: unset;
+        }
+
+        .grid-rightsidebar {
+            grid-area: unset;
+            position: fixed;
+        }
+
+        .grid-header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: unset;
+            padding-right: unset;
+
+            h3 {
+                font-size: 0.95rem;
+            }
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+
+                .search-control {
+                    width: calc(100% - 45px);
+                }
+            }
+        }
+
+        .grid-subheader {
+            width: 100%;
+            padding-left: unset;
+            padding-right: unset;
+            padding-bottom: unset;
+            margin-top: 1.5rem;
+
+            .grid-days {
+                width: calc(100vw - 65px);
+            }
+        }
+
+        .grid-view {
+            padding-left: unset;
+            padding-right: unset;
+            width: 100%;
+
+            .grid-view-header {
+                width: 100%;
+                align-items: center;
+            }
+
+            .scrollable-container {
+                width: 100%;
+            }
+        }
+    }
+ 
+
+    //RESET EXPANSION FOR MOBILE VERSION
+    //If grid has just left class for expansion when sidebar is hidden
+    .grid.expanded-left {
+        transform: initial;
+
+        .grid-view {
+
+            .grid-view-header {
+                width: initial;
+            }
+
+            .scrollable-container {
+                width: initial;
+            }
+        }
+
+        .grid-header {
+            width: initial;
+        }
+
+        .grid-subheader {
+            
+            .grid-days {
+                width: initial;
+            }
+        }
+
+        .grid-rightsidebar {
+            transform: initial;
+        }
+    }
+
+
+
+    //If grid has just right class for expansion when rightsidebar is hidden
+    .grid.expanded-right {
+        transform: initial;
+
+        .grid-view {
+            width: 100%;
+
+            .scrollable-container {
+                width: calc(100% - 100px);
+            }
+        }
+        
+        .grid-header {
+            width: initial;
+        }
+
+        .grid-subheader {
+            
+            .grid-days {
+                width: initial;
+            }
+        }
+
+        .grid-header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: unset;
+            padding-right: unset;
+
+            h3 {
+                font-size: 0.95rem;
+            }
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+
+                .search-control {
+                    width: calc(100% - 45px);
+                }
+            }
+        }
+
+        .grid-subheader {
+            width: 100%;
+            padding-left: unset;
+            padding-right: unset;
+            padding-bottom: unset;
+            margin-top: 1.5rem;
+
+            .grid-days {
+                width: calc(100vw - 55px);
+            }
+        }
+
+        .grid-rightsidebar {
+
+            .hide-sidebar-btn {
+                left: -10px;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+
+
+    //If grid has both classes for expansion when both sidebars are hidden
+    .grid.expanded-left.expanded-right {
+        transform: initial;
+
+        .grid-subheader {
+            
+            .grid-days {
+                width: initial;
+            }
+        }
+
+        .grid-view {
+
+            .grid-view-header {
+                width: initial
+            }
+
+            .scrollable-container {
+                width: initial;
+            }
+        }
+
+        .grid-rightsidebar {
+            transform: initial;
+        }
+    }
+}
+
+
+
+//500px
+@media screen and (max-width: 500px) {
+
+    .grid {
+
+        .grid-view {
+
+            .grid-view-header {
+                align-items: flex-end;
+                flex-direction: column;
+
+                .tasks-categories {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    li {
+                        white-space: nowrap;
+                    }
+                }
+
+                .btn-add-task {
+                    margin-top: 0.75rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+//475px
+@media screen and (max-width: 475px) {
+
+    .grid {
+
+        .grid-view {
+
+            .scrollable-container {
+
+                .content-grid-container {
+
+                    .content {
+
+                        .dates {
+
+                            li {
+                                width: 380px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//450px
+@media screen and (max-width: 450px) {
+
+    .grid {
+
+        .grid-view {
+
+            .scrollable-container {
+
+                .content-grid-container {
+
+                    .content {
+
+                        .dates {
+
+                            li {
+                                width: 350px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+//420px
+@media screen and (max-width: 420px) {
+
+    .grid {
+
+        .grid-view {
+
+            .scrollable-container {
+
+                .content-grid-container {
+
+                    .content {
+
+                        .dates {
+
+                            li {
+                                width: 320px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

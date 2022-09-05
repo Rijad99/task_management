@@ -1,0 +1,69 @@
+.userContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.userContainer .photo {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.userContainer .photo .status {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgb(25, 242, 6);
+    box-shadow: 0 0 8px rgb(25, 242, 6);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.userContainer .photo::before {
+    content: "";
+    width: 53px;
+    height: 53px;
+    position: absolute;
+    background-color: rgba(89, 89, 102, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.025);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.userContainer .photo .img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.95rem;
+    line-height: 1.3;
+}
+
+.userInfo .fullName {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+
+.userInfo .role {
+    color: rgb(89, 89, 102);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.userContainer .btnMore {
+    position: absolute;
+    right: 0;
+}

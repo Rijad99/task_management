@@ -1,0 +1,89 @@
+.smallest {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.small {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.medium {
+    padding: 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgb(136, 136, 138);
+}
+
+.large {
+    width: 50%;
+    height: 45px;
+    padding: 0 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgb(136, 136, 138);
+}
+
+.largest {
+    width: 100%;
+    height: 45px;
+    padding: 0 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgb(136, 136, 138);
+}
+
+.bgGrey {
+    background-color: rgb(25, 26, 31);
+}
+
+.bgDarkGrey {
+    background-color: rgb(18, 19, 23);
+}
+
+.bgLightBlue {
+    background-color: rgb(34 ,149, 255);
+    color: rgb(255, 255, 255);
+}
+
+.btnNotifications {
+    z-index: 1;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border-radius: 50%;
+    background-color: rgb(255, 135, 23);
+    box-shadow: 0 0 10px rgba(255, 135, 23, 0.6);
+}
+
+.circle::after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: rgb(18, 19, 23);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+}
+
+.circle small {
+    font-size: 0.5rem;
+    font-weight: 600;
+    margin-top: 2px;
+}

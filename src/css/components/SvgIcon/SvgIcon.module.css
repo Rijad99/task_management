@@ -1,0 +1,9 @@
+.path {
+    fill: rgb(89, 89, 102);
+    stroke: rgb(89, 89, 102) !important;
+    stroke-width: 0;
+    clip-rule: evenodd;
+    fill-rule: evenodd;
+    transform: scale(0.9);
+    transition: all 300ms ease;
+}

@@ -1,0 +1,84 @@
+//Variables 
+@import "../../Variables";
+
+
+
+.cb {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $lightGrey;
+    border-radius: 7px;
+    transition: all 300ms ease;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: 7px;
+        top: 4px;
+        width: 1px;
+        height: 8px;
+        background-color: $white;
+        transform: rotate(30deg);
+        opacity: 0;
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        width: 1px;
+        height: 3px;
+        background-color: $white;
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
+          
+    .custom-cb {
+        display: none;
+
+        + label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 28px;
+            color: $white;
+            white-space: nowrap;
+            transition: all 300ms ease;
+            cursor: pointer;
+        }
+    }
+}
+
+.cb.cb-checked-blue {
+    border-radius: 7px;
+    background: $lightBlue;
+    box-shadow: 0 0 10px rgba($lightBlue, 0.3);
+
+    &::before, &::after {
+        opacity: 1;
+    }
+
+    + label::before {
+            background-color: $lightBlue;
+            color: $white;
+    }
+}
+
+.cb.cb-checked-red {
+    border-radius: 7px;
+    background: $lightRed;
+    box-shadow: 0 0 10px rgba($lightRed, 0.3);
+
+    &::before, &::after {
+        opacity: 1;
+    }
+
+    + label::before {
+            background-color: $lightBlue;
+            color: $white;
+    }
+}

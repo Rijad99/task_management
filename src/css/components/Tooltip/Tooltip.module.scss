@@ -1,0 +1,30 @@
+//Variables 
+@import "../../Variables";
+
+
+
+.tooltip {
+    position: absolute;
+    left: 2.7rem;
+    color: rgb(23, 23, 33);
+    padding: 0.4rem 1rem; 
+    background-color: $white;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 300ms ease;
+    z-index: 10;
+}
+
+a {
+
+    &:hover {
+
+        + .tooltip {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+}

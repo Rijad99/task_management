@@ -1,0 +1,145 @@
+.scrollable-container {
+  width: calc(100vw - 500px);
+  height: calc(100vh - 350px);
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+.scrollable-container .content-grid-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgb(25, 26, 31);
+  border-radius: 15px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.scrollable-container .content-grid-container:hover {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+.scrollable-container .content-grid-container .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 15px;
+}
+.scrollable-container .content-grid-container .content .dates {
+  display: flex;
+  padding: 1rem 1.2rem;
+}
+.scrollable-container .content-grid-container .content .dates li {
+  position: relative;
+  width: 405px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgb(136, 136, 138);
+}
+.scrollable-container .content-grid-container .content .dates li:before {
+  content: "";
+  height: calc(100% - 4rem);
+  width: 1px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(136, 136, 138, 0.05);
+}
+.scrollable-container .content-grid-container .content .dates li .month {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list {
+  width: 100%;
+  max-height: calc(100vh - 485px);
+  height: calc(100vh - 485px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(18, 19, 23);
+  padding: 0 1rem;
+  border-radius: 15px;
+  cursor: default;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item::before {
+  display: none;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title {
+  transition: all 300ms ease;
+  max-width: calc(100% - 90px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title:hover, .scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title:focus {
+  text-overflow: unset;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title:focus[contenteditable=true] {
+  outline: 1px solid rgb(25, 26, 31);
+  padding: 0.25rem 0.5rem;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title:hover[contenteditable=true] {
+  outline: 1px solid rgb(25, 26, 31);
+  padding: 0.25rem 0.5rem;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-title.show-save + .save-icon {
+  opacity: 1;
+  visibility: visible;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .save-icon {
+  position: absolute;
+  right: 2.7rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+  -webkit-animation: icon-blinking 1s infinite;
+          animation: icon-blinking 1s infinite;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .btn-task-menu {
+  position: absolute;
+  right: 1rem;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item .task-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  cursor: pointer;
+}
+.scrollable-container .content-grid-container .content .dates li .tasks-list .task-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+@-webkit-keyframes icon-blinking {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes icon-blinking {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}/*# sourceMappingURL=ScrollableContainer.css.map */

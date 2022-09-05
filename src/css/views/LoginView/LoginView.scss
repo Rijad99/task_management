@@ -1,0 +1,49 @@
+//Variables 
+@import "../../Variables";
+
+
+
+.form-login {
+
+    h2 {
+        color: $white;
+    }
+
+    .options {
+        display: flex;
+    
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            img {
+                width: 16px;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+    
+    .divider {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $lowContrastLightBlue;
+        font-size: 0.7rem;
+        font-weight: 600;
+    
+        .line {
+            width: 45%;
+            height: 1px;
+            background-color: $lightGrey;
+        }
+    }
+
+    .note {
+        display: flex;
+        align-items: center;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: $lowContrastLightBlue;
+    }
+}

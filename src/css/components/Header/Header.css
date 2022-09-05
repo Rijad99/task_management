@@ -1,0 +1,10 @@
+.grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-header .header-list {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}/*# sourceMappingURL=Header.css.map */
