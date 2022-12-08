@@ -27,7 +27,7 @@ input:-webkit-autofill {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, rgb(17, 121, 219), rgb(34, 149, 255));
+  background: linear-gradient(to bottom, rgb(17, 121, 219), rgb(56, 138, 193));
   border-radius: 15px;
 }
 
@@ -89,10 +89,10 @@ button {
   cursor: pointer;
 }
 button:hover svg {
-  filter: drop-shadow(0 0 5px rgba(34, 149, 255, 0.6));
+  filter: drop-shadow(0 0 5px rgba(56, 138, 193, 0.6));
 }
 button:hover svg path {
-  fill: rgb(34, 149, 255);
+  fill: rgb(56, 138, 193);
   stroke: transparent !important;
 }
 

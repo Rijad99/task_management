@@ -42,13 +42,13 @@
   font-weight: 600;
 }
 .grid-subheader .grid-days .day-items .day-item:hover {
-  background-color: rgb(34, 149, 255);
+  background-color: rgb(56, 138, 193);
 }
 .grid-subheader .grid-days .day-items .day-item:hover small, .grid-subheader .grid-days .day-items .day-item:hover span {
   color: rgb(255, 255, 255);
 }
 .grid-subheader .grid-days .day-items .day-item.current-day {
-  background-color: rgb(34, 149, 255);
+  background-color: rgb(56, 138, 193);
   box-shadow: 0 10px 15px rgba(23, 23, 33, 0.15);
   border: none;
 }

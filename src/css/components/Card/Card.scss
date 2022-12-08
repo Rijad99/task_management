@@ -1,0 +1,47 @@
+@import "../../Variables";
+
+
+
+.orange-gradient {
+    background-image: linear-gradient(140deg, $lightOrange 15%, $lighterOrange 65%);
+}
+
+.purple-gradient {
+    background-image: linear-gradient(140deg, $darkPurple 15%, $lightPurple 85%);
+}
+
+.blue-gradient {
+    background-image: linear-gradient(140deg, $darkBlue 10%, $lightBlue 75%);
+}
+
+.card {
+    border-radius: 1.5rem;
+    padding: 1rem;
+}
+
+.tasks-progress-card {
+
+    button {
+
+        svg {
+
+            path {
+                fill: rgb(255, 255, 255);
+                stroke: transparent;
+            }
+        }
+    }
+
+    h2, small {
+        color: $white;
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    &:first-child {
+        box-shadow: 0 0.5rem 1.35rem rgba($lighterOrange, 0.25);
+        z-index: 1;
+    }
+}

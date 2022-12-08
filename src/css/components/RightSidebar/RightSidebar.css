@@ -11,7 +11,7 @@
   transform: rotate(-90deg);
 }
 .grid-rightsidebar .hide-sidebar-btn:hover path {
-  fill: rgb(34, 149, 255);
+  fill: rgb(56, 138, 193);
 }
 
 .grid-rightsidebar.rightsidebar-hidden {

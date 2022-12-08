@@ -85,7 +85,7 @@ export const FormControl = (props) => {
 
     return (
         <>
-            <Container className={`${stylesFormControl.formControl} ${props?.className}`}>
+            <Container id={props?.id} className={`${stylesFormControl.formControl} ${props?.className}`}>
                 <Label text={props.text} />
                 {props?.icon && <SvgIcon path={props.icon} className={stylesHelpers.mr05} />}
                 {props.children}

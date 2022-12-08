@@ -46,14 +46,14 @@
 
 .cb.cb-checked-blue {
   border-radius: 7px;
-  background: rgb(34, 149, 255);
-  box-shadow: 0 0 10px rgba(34, 149, 255, 0.3);
+  background: rgb(56, 138, 193);
+  box-shadow: 0 0 10px rgba(56, 138, 193, 0.3);
 }
 .cb.cb-checked-blue::before, .cb.cb-checked-blue::after {
   opacity: 1;
 }
 .cb.cb-checked-blue + label::before {
-  background-color: rgb(34, 149, 255);
+  background-color: rgb(56, 138, 193);
   color: rgb(255, 255, 255);
 }
 
@@ -66,6 +66,6 @@
   opacity: 1;
 }
 .cb.cb-checked-red + label::before {
-  background-color: rgb(34, 149, 255);
+  background-color: rgb(56, 138, 193);
   color: rgb(255, 255, 255);
 }/*# sourceMappingURL=Checkbox.css.map */
