@@ -35,7 +35,7 @@
 }
 .scrollable-container .content-grid-container .content .dates li {
   position: relative;
-  width: 405px;
+  width: 550px;
   font-size: 0.7rem;
   font-weight: 600;
   color: rgb(136, 136, 138);
@@ -65,7 +65,7 @@
 }
 .scrollable-container .content-grid-container .content .dates li .tasks-list .task-item {
   width: 100%;
-  height: 45px;
+  height: 50px;
   display: flex;
   align-items: center;
   background-color: rgb(18, 19, 23);

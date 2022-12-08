@@ -1,8 +1,8 @@
 export const taskReducer = (
         state = [
-            { id: "1", name:  "Build Web API for Task Management application", date: "01.01.2022", category: "Mobile Apps", isFinished: false },
-            { id: "2", name:  "Create alert components", date: "01.01.2022", category: "Mobile Apps", isFinished: false },
-            { id: "3", name:  "Create SQL database and API", date: "03.01.2022", category: "Mobile Apps", isFinished: false }
+            { id: "1", name:  "Build Web API for Task Management application", date: "01.12.2022", category: "Mobile Apps", isFinished: false },
+            { id: "2", name:  "Create alert components", date: "01.12.2022", category: "Mobile Apps", isFinished: false },
+            { id: "3", name:  "Create SQL database and API", date: "03.12.2022", category: "Mobile Apps", isFinished: false }
         ], 
         action
     ) => {

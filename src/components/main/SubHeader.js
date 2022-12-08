@@ -7,7 +7,7 @@ import stylesHelpers from "../../css/Helpers.module.css"
 import "../../css/components/SubHeader/SubHeader.css"
 
 //Functions
-import { daysInCurrentMonth, getNameOfDay } from "../../functions/date"
+import { daysInCurrentMonth, getNameOfDay, setMonthAndTime } from "../../functions/date"
 
 //Custom Components
 import { Container, Span } from "../small/Elements"
@@ -100,6 +100,16 @@ const Day = (props) => {
 
 
 
+const MonthAndTime = ({ data }) => {
+    
+    return (
+        <>
+            <Span text={data} className="current-month"></Span>
+        </>
+    ) 
+}
+
+
 
 const DaysList = () => {
     const sliderContainer = useRef(null)
@@ -109,6 +119,7 @@ const DaysList = () => {
     return (
         <>
             <Container className="grid-days">
+                <MonthAndTime data={setMonthAndTime()} />
                 <div 
                     className="day-items" 
                     ref={sliderContainer} 

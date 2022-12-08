@@ -11,6 +11,10 @@
         width: calc(100vw - 500px);
         transition: all 300ms ease;
 
+        .current-month {
+            color: $white;
+        }
+
         .day-items {
             position: relative;
             display: flex;
@@ -19,6 +23,7 @@
             overflow-y: hidden;
             user-select: none;
             transition: all 300ms ease;
+            margin-top: 0.5rem;
             cursor: pointer;
     
             .day-item {
