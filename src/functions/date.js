@@ -1,3 +1,7 @@
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
 export const checkIfLeapYear = (year) => {
 
     if (year % 4 === 0) {
@@ -16,8 +20,6 @@ export const checkIfLeapYear = (year) => {
 
 export const setDate = () => {
     let date = new Date()
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
     const 
         month = months[date.getMonth()],
@@ -27,6 +29,15 @@ export const setDate = () => {
     date = `${day} ${month}, ${nameOfDay}`
 
     return date
+}
+
+export const setMonthAndTime = () => {
+    const date = new Date()
+    const currentMonth = date.getMonth()
+    const time = `${date.getHours()}:${date.getMinutes()}`
+    const monthAndTime = `${months[currentMonth]} - ${time}`
+
+    return monthAndTime
 }
 
 export const daysInCurrentMonth = () => {
@@ -66,9 +77,8 @@ export const daysInCurrentMonth = () => {
 }
 
 export const getNameOfDay = (dayInWeek) => {
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
-    return days[dayInWeek]
+    return shortDays[dayInWeek]
 }
 
 export const createDates = () => {
@@ -77,15 +87,13 @@ export const createDates = () => {
     const currentYear = date.getUTCFullYear()
 
     const daysInMonth = [31, checkIfLeapYear(currentYear), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-    let daysInYear = daysInMonth.reduce((curr, acc) => curr + acc) + 10
     let day = 0
-    let month = 0
+    let month = new Date().getMonth()
     let monthInYear = months[month]
     let currentMonthDays = daysInMonth[month++]
 
-    for (let i = 0; i <= daysInYear; i++) {
+    for (let i = 0; i <= currentMonthDays; i++) {
         let newDay = ++day
 
         if (newDay <= currentMonthDays) {
