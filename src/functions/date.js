@@ -34,8 +34,13 @@ export const setDate = () => {
 export const setMonthAndTime = () => {
     const date = new Date()
     const currentMonth = date.getMonth()
-    const time = `${date.getHours()}:${date.getMinutes()}`
-    const monthAndTime = `${months[currentMonth]} - ${time}`
+    let hours = date.getHours()
+    let minutes = date.getMinutes()
+
+    hours = hours < 10 ? `0${hours}` : `${hours}`
+    minutes = minutes < 10 ? `0${minutes}` : `${minutes}`
+    
+    const monthAndTime = `${months[currentMonth]} - ${hours}:${minutes}`
 
     return monthAndTime
 }

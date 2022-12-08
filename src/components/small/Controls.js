@@ -9,7 +9,7 @@ import stylesHelpers from "../../css/Helpers.module.css"
 import "../../css/components/Checkbox/Checkbox.css"
 
 //Custom Components
-import { Container, Label } from "./Elements"
+import { Container, Label, Image } from "./Elements"
 import { Small } from "./TextElements"
 import { SvgIcon } from "./SvgIcon"
 import { List, ListItem } from "./ListElements"
@@ -99,16 +99,22 @@ export const Select = (props) => {
 
     return (
         <Container className={`${stylesFormControl.select} ${props?.className}`} onClick={props.onClick}>
-            <Input placeholder="Choose category" disabled />
+            <Container className={stylesFormControl.inputContainer}>
+                <Image src="../flags/en-us-flag.png" className={stylesHelpers.mr1} />
+                <Input placeholder={props.placeholderText} disabled />
+            </Container>
             {props?.icon && <SvgIcon path={props.icon} />}
             <Container className={`${stylesFormControl.selectList}`}>
                 <List>
                     {
                         props.data.map(item => {
-                            const { id, name } = item
+                            const { id, name, icon } = item
 
                             return (
-                                <ListItem key={id} onClick={props.onClick}>{name}</ListItem>
+                                <ListItem key={id} onClick={props.onClick}>
+                                    <Image src={icon} className={stylesHelpers.mr1} />
+                                    {name}
+                                </ListItem>
                             )
                         })
                     }

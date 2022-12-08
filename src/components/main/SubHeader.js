@@ -104,7 +104,7 @@ const MonthAndTime = ({ data }) => {
     
     return (
         <>
-            <Span text={data} className="current-month"></Span>
+            <Span text={data} className="month-time"></Span>
         </>
     ) 
 }

@@ -115,8 +115,6 @@
   .grid .grid-header {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding-left: unset;
     padding-right: unset;
   }
@@ -126,7 +124,6 @@
   .grid .grid-header ul {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     margin-top: 0.5rem;
   }
   .grid .grid-header ul .search-control {

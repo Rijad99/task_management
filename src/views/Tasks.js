@@ -334,7 +334,7 @@ class Tasks extends React.Component {
                             <FormControl text="Date" name="date" className={`${stylesFormControl.medium}`}>
                                 <Input name="date" type="text" className="input" placeholder={this.state.task.date} value={this.state.task.date} onChange={this.handleChange}></Input>
                             </FormControl>
-                            <Select data={categoriesData} className={stylesFormControl.medium} icon={arrowIconPath} onClick={e => {
+                            <Select data={categoriesData} placeholderText="Choose category" className={stylesFormControl.medium} icon={arrowIconPath} onClick={e => {
                                 this.handleSelectOpenClose(e)
                                 this.handleSelectValueChange(e)
                             }} />

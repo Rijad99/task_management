@@ -56,6 +56,23 @@
     position: relative;
 }
 
+.select img {
+    width: 1.35rem;
+}
+
+.select .inputContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(25, 26, 31);
+    padding-left: 1rem;
+    border-radius: 15px;
+}
+
+.select .inputContainer input {
+    padding-left: unset;
+}
+
 .select:hover svg {
     filter: drop-shadow(0 0 5px rgba(34, 149, 255), 0.6);
 }
@@ -94,12 +111,18 @@
 }
 
 .selectList ul li {
+    display: flex;
+    align-items: center;
     padding: 0.2rem;
     font-size: 0.7rem;
     font-weight: 600;
     color: rgb(89, 89, 102);
     cursor: pointer;
     transition: all 300ms ease;
+}
+
+.selectList ul li img {
+    width: 1.35rem;
 }
 
 .selectList ul li:hover {

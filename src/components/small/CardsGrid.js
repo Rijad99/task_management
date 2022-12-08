@@ -10,7 +10,7 @@ export const CardsGrid = (props) => {
 
     return (
         <>
-            <Container className={`grid-cards ${props.className}`}>
+            <Container className={`tasks-progress-cards ${props.className}`}>
                 {props.children}
             </Container>
         </>

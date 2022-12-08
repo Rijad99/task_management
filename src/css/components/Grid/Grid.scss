@@ -178,8 +178,6 @@
         .grid-header {
             width: 100%;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             padding-left: unset;
             padding-right: unset;
 
@@ -190,7 +188,6 @@
             ul {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
                 margin-top: 0.5rem;
 
                 .search-control {

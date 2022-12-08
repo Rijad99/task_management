@@ -6,7 +6,7 @@
   width: calc(100vw - 500px);
   transition: all 300ms ease;
 }
-.grid-subheader .grid-days .current-month {
+.grid-subheader .grid-days .month-time {
   color: rgb(255, 255, 255);
 }
 .grid-subheader .grid-days .day-items {
