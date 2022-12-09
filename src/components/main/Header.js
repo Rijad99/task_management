@@ -23,6 +23,20 @@ import { localizationData } from "../../data/localizationData"
 
 
 export class Header extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            localization: "EN (United States)",
+            flag: "../flags/en-us-flag.png"
+        }
+    }
+
+    componentDidMount() {
+
+        if (!JSON.parse(localStorage.getItem("localization"))) {
+            localStorage.setItem("localization", JSON.stringify(`${this.state.localization} - ${this.state.flag}`))
+        }
+    }
 
     handleSelectOpenClose = e => {
         e.stopPropagation()
@@ -30,26 +44,38 @@ export class Header extends React.Component {
         e.currentTarget.classList.toggle(stylesFormControl.selectVisible)
     }
 
-    //TO DO - Make generic handleSelectValueChange
+    handleLocalizationChange = e => {
+        const localization = e.target.innerText
+        const selectEl = e.currentTarget.parentElement.parentElement.parentElement.firstChild.lastChild
+        const image = e.currentTarget.parentElement.parentElement.parentElement.firstChild.firstChild
+        const flag = e.target.firstChild?.getAttribute("src")
 
-    // handleSelectValueChange = e => {
-    //     const value = e.target.innerText
-    //     const selectEl = e.currentTarget.parentElement.parentElement.parentElement.firstChild
-
-    //     if (value) {
-    //         selectEl.setAttribute("placeholder", value)
+        if (localization) {
+            selectEl.setAttribute("placeholder", localization)
+            image.setAttribute("src", flag)
         
-    //         this.setState({
-    //             ...this.state,
-    //             task: {
-    //                 ...this.state.task,
-    //                 category: value
-    //             }
-    //         })
-    //     }
-    // }
+            this.setState({
+                localization,
+                flag
+            })
+
+            localStorage.setItem("localization", JSON.stringify(`${localization} - ${flag}`))
+        }
+    }
 
     render() {
+        let localization = ""
+        let flag = ""
+
+        if (!JSON.parse(localStorage.getItem("localization"))) {
+            localization = "EN (United States)"
+            flag = "../flags/en-us-flag.png"
+
+        } else {
+            localization = JSON.parse(localStorage.getItem("localization")).split(" - ")[0]
+            flag = JSON.parse(localStorage.getItem("localization")).split(" - ")[1]
+        }
+
         return (
             <>
                 <Container id="search" className={`grid-header ${stylesHelpers.container}`}>
@@ -63,9 +89,9 @@ export class Header extends React.Component {
                             <Notifications number="2" />
                         </Button>
                         <Container className={`form-controls ${stylesFormControl.small} ${stylesHelpers.flex} ${stylesHelpers.aiC} ${stylesHelpers.jcSb} ${stylesHelpers.ml1}`}>
-                            <Select data={localizationData} placeholderText="EN (United States)" className={stylesFormControl.large} icon={arrowIconPath} onClick={e => {
+                            <Select data={localizationData} placeholderText={localization} className={stylesFormControl.large} selectedItemIcon={`${flag}`} icon={arrowIconPath} onClick={e => {
                                 this.handleSelectOpenClose(e)
-                                // this.handleSelectValueChange(e)
+                                this.handleLocalizationChange(e)
                             }} />
                         </Container>
                     </List>

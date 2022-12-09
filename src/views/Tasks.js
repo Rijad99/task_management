@@ -183,10 +183,10 @@ class Tasks extends React.Component {
         e.currentTarget.nextSibling.classList.toggle(stylesFormControl.dropdownVisible)
     }
     
-    handleSelectValueChange = e => {
+    handleTaskCategoryChange = e => {
         const value = e.target.innerText
-        const selectEl = e.currentTarget.parentElement.parentElement.parentElement.firstChild
-
+        const selectEl = e.currentTarget.parentElement.parentElement.parentElement.firstChild.firstChild
+        
         if (value) {
             selectEl.setAttribute("placeholder", value)
         
@@ -336,7 +336,7 @@ class Tasks extends React.Component {
                             </FormControl>
                             <Select data={categoriesData} placeholderText="Choose category" className={stylesFormControl.medium} icon={arrowIconPath} onClick={e => {
                                 this.handleSelectOpenClose(e)
-                                this.handleSelectValueChange(e)
+                                this.handleTaskCategoryChange(e)
                             }} />
                         </Container>
     

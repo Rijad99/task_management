@@ -100,7 +100,10 @@ export const Select = (props) => {
     return (
         <Container className={`${stylesFormControl.select} ${props?.className}`} onClick={props.onClick}>
             <Container className={stylesFormControl.inputContainer}>
-                <Image src="../flags/en-us-flag.png" className={stylesHelpers.mr1} />
+                {props?.selectedItemIcon ? 
+                    <Image src={props.selectedItemIcon} className={stylesHelpers.mr1} /> : 
+                    null
+                }
                 <Input placeholder={props.placeholderText} disabled />
             </Container>
             {props?.icon && <SvgIcon path={props.icon} />}
@@ -112,7 +115,10 @@ export const Select = (props) => {
 
                             return (
                                 <ListItem key={id} onClick={props.onClick}>
-                                    <Image src={icon} className={stylesHelpers.mr1} />
+                                    {icon ?
+                                        <Image src={icon} className={stylesHelpers.mr1} /> :
+                                        null
+                                    }
                                     {name}
                                 </ListItem>
                             )
