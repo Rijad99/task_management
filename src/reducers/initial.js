@@ -4,12 +4,19 @@ export const initialReducer = (
         notification: {
             type: "",
             message: ""
-        }
+        },
+        localization: "EN (United States) - ../flags/en-us-flag.png"
     }, 
     action
 ) => {
 
 switch (action.type) {
+
+        case "SET_LOCALIZATION":
+            return {
+                ...state,
+                localization: action.payload
+            }
 
         case "SHOW_NOTIFICATION":
             return { 

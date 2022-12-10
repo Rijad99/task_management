@@ -1,14 +1,14 @@
 export const localization = {
     en: {
-        headerTitle: "Task Management"
+        taskManagement: "Task Management"
     },
     de: {
-        headerTitle: "Aufgabenmanagement"
+        taskManagement: "Aufgabenmanagement"
     },
     pl: {
-        headerTitle: "Zarządzanie zadaniami"
+        taskManagement: "Zarządzanie zadaniami"
     },
     ru: {
-        headerTitle: "Управление задачами"
+        taskManagement: "Управление задачами"
     }
 }

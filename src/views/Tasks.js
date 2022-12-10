@@ -42,9 +42,6 @@ import { ValidateForm } from "../formValidation/formValidation"
 import { categoriesData } from "../data/categoriesData"
 import { taskDropdownData } from "../data/dropdownData"
 
-//Localization
-import { localization } from "../localization/views/task/tasksViewLocalizations"
-
 
 
 //Categories
@@ -76,8 +73,6 @@ const categories = [
     }
 ]
 
-const lang = JSON.parse(localStorage.getItem("localization")).split(" ")[0].toLowerCase() || "en"
-
 
 
 class Tasks extends React.Component {
@@ -86,8 +81,6 @@ class Tasks extends React.Component {
         super(props)
         this.slider = createRef()
         this.state = {
-            lang: localStorage.getItem("localization").split(" ")[0].toLowerCase().substring(1, 3) || "en",
-            localization: localization[`${lang}`],
             categorySelected: null,
             isActiveAddTaskForm: false,
             tasks: [],
@@ -110,7 +103,7 @@ class Tasks extends React.Component {
                     <this.CreateTaskForm />
                 }
                 <Grid 
-                    headerTitle={this.state.localization.headerTitle}
+                    headerTitle="Task Management"
                     currentViewComponent={
                     <this.CurrentView 
                         state={this.state} 

@@ -20,10 +20,28 @@ import { CardsGrid } from "../small/CardsGrid"
 
 //Icons 
 import { arrowIconPath, searchIconPath } from "../../data/svgData"
+import { UseSelector } from "../../customHooks/useLocationCustomHook"
+
+//Localization
+import { localization } from "../../localization/components/rightSidebar/rightSidebarLocalizations"
 
 
 
 export const RightSidebar = () => {
+    const selector = UseSelector()
+    let lang = ""
+    let translation = null
+
+    if (!JSON.parse(localStorage.getItem("localization"))) {
+        lang = selector.initial.localization.split(" ")[0].toLowerCase()
+        translation = localization[`${lang}`]
+
+    } else {
+        const locale = JSON.parse(localStorage.getItem("localization"))
+
+        lang = locale.split(" ")[0].toLowerCase()
+        translation = localization[`${lang}`]
+    }
 
     const hideRightSidebar = e => {
         e.currentTarget.parentElement.parentElement.classList.toggle("expanded-right")
@@ -75,7 +93,7 @@ export const RightSidebar = () => {
                             <SvgIcon path={searchIconPath} />
                         </Button>
                         <HeadingTwo title="40" className={`${stylesHelpers.mt2}`} />
-                        <Small text="Upcoming tasks and projects" />
+                        <Small text={translation.upcomingTasksAndProjects} />
                     </Card>
 
                     <Card className="purple-gradient tasks-progress-card">
@@ -83,7 +101,7 @@ export const RightSidebar = () => {
                             <SvgIcon path={searchIconPath} />
                         </Button>
                         <HeadingTwo title="87" className={`${stylesHelpers.mt2}`} />
-                        <Small text="Tasks and projects in progress" />
+                        <Small text={translation.tasksAndProjectsInProgress} />
                     </Card>
 
                     <Card className="blue-gradient tasks-progress-card">
@@ -91,7 +109,7 @@ export const RightSidebar = () => {
                             <SvgIcon path={searchIconPath} />
                         </Button>
                         <HeadingTwo title="102" className={`${stylesHelpers.mt2}`} />
-                        <Small text="Completed tasks" />
+                        <Small text={translation.completedTasks} />
                     </Card>
                 </CardsGrid>
             </Container>
