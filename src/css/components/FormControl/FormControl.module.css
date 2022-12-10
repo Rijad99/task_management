@@ -40,15 +40,15 @@
 }
 
 .small {
-    width: 24%;
+    width: 225px;
 }
 
 .medium {
-    width: 49%;
+    width: 450px;
 }
 
 .large {
-    width: 100%;
+    width:  900px;
 }
 
 .select {

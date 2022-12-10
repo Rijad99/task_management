@@ -38,6 +38,13 @@ export class Header extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+
+        if (prevState.localization !== this.state.localization) {
+            localStorage.setItem("localization", JSON.stringify(`${this.state.localization} - ${this.state.flag}`))
+        }
+    }
+
     handleSelectOpenClose = e => {
         e.stopPropagation()
 
@@ -59,7 +66,10 @@ export class Header extends React.Component {
                 flag
             })
 
-            localStorage.setItem("localization", JSON.stringify(`${localization} - ${flag}`))
+            this.setState({
+                localization,
+                flag
+            })
         }
     }
 

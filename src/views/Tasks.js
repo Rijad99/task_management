@@ -42,6 +42,11 @@ import { ValidateForm } from "../formValidation/formValidation"
 import { categoriesData } from "../data/categoriesData"
 import { taskDropdownData } from "../data/dropdownData"
 
+//Localization
+import { localization } from "../localization/views/task/tasksViewLocalizations"
+
+
+
 //Categories
 const categories = [
     {
@@ -71,6 +76,8 @@ const categories = [
     }
 ]
 
+const lang = JSON.parse(localStorage.getItem("localization")).split(" ")[0].toLowerCase() || "en"
+
 
 
 class Tasks extends React.Component {
@@ -79,6 +86,8 @@ class Tasks extends React.Component {
         super(props)
         this.slider = createRef()
         this.state = {
+            lang: localStorage.getItem("localization").split(" ")[0].toLowerCase().substring(1, 3) || "en",
+            localization: localization[`${lang}`],
             categorySelected: null,
             isActiveAddTaskForm: false,
             tasks: [],
@@ -93,7 +102,7 @@ class Tasks extends React.Component {
     }
 
     render() {
-        
+
         return (
             <>
                 {
@@ -101,7 +110,7 @@ class Tasks extends React.Component {
                     <this.CreateTaskForm />
                 }
                 <Grid 
-                    headerTitle="Task Management" 
+                    headerTitle={this.state.localization.headerTitle}
                     currentViewComponent={
                     <this.CurrentView 
                         state={this.state} 
@@ -304,7 +313,7 @@ class Tasks extends React.Component {
         return (
             <Overlay>
                 <Form 
-                    className={`${stylesForm.form} form-create-task ${stylesForm.medium} ${stylesHelpers.flex} ${stylesHelpers.fdC} ${stylesHelpers.aiC}`}     
+                    className={`${stylesForm.form} form-create-task ${stylesHelpers.flex} ${stylesHelpers.fdC} ${stylesHelpers.aiC}`}     
                     onSubmit={(e) => {
                         e.preventDefault()
                         // this.handleSubmit(e, dispatch)
@@ -318,20 +327,20 @@ class Tasks extends React.Component {
                     </Button>
                     <HeadingTwo className={stylesHelpers.mb3} title="Create task" />
     
-                        <Container className={`form-controls ${stylesFormControl.large}`}>
+                        <Container className={`form-controls ${stylesFormControl.medium}`}>
                             <FormControl text="Title" name="name">
                                 <Input name="name" type="text" className="input" placeholder="Title" value={this.state.task.title} onChange={this.handleChange}></Input>
                             </FormControl>
                         </Container>
 
-                        <Container className={`form-controls ${stylesFormControl.large} ${stylesHelpers.mt3}`}>
+                        <Container className={`form-controls ${stylesFormControl.medium} ${stylesHelpers.mt3}`}>
                             <FormControl text="Password" name="password">
                                 <Input name="password" type="text" className="input" id="passwordInput" placeholder="Password" onChange={this.handleChange}></Input>
                             </FormControl>
                         </Container>
     
-                        <Container className={`form-controls ${stylesFormControl.large} ${stylesHelpers.flex} ${stylesHelpers.aiC} ${stylesHelpers.jcSb} ${stylesHelpers.mt3}`}>
-                            <FormControl text="Date" name="date" className={`${stylesFormControl.medium}`}>
+                        <Container className={`form-controls ${stylesFormControl.medium} ${stylesHelpers.flex} ${stylesHelpers.aiC} ${stylesHelpers.jcSb} ${stylesHelpers.mt3}`}>
+                            <FormControl text="Date" name="date" className={`${stylesFormControl.medium} ${stylesHelpers.mr1}`}>
                                 <Input name="date" type="text" className="input" placeholder={this.state.task.date} value={this.state.task.date} onChange={this.handleChange}></Input>
                             </FormControl>
                             <Select data={categoriesData} placeholderText="Choose category" className={stylesFormControl.medium} icon={arrowIconPath} onClick={e => {

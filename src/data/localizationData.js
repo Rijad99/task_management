@@ -16,7 +16,7 @@ export const localizationData = [
     },
     {
         id: 4,
-        name: "RUS (Russian)",
+        name: "RU (Russian)",
         icon: "../flags/ru-flag.png"
     }
 ]
