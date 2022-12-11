@@ -24,7 +24,17 @@
 }
 .grid .grid-sidebar {
   grid-area: grid-sidebar;
+  height: calc(100vh - 65px);
   transition: all 300ms ease;
+}
+.grid .grid-sidebar .list-container {
+  height: calc(100vh - 350px);
+  max-height: calc(100vh - 350px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .grid .grid-view {
   grid-area: grid-view;
@@ -38,6 +48,8 @@
 }
 .grid .grid-rightsidebar {
   grid-area: grid-rightsidebar;
+  height: calc(100vh - 65px);
+  max-height: calc(100vh - 65px);
   transition: all 300ms ease;
 }
 

@@ -133,31 +133,34 @@ export const Sidebar = ({ userRoles }) => {
 					/>
 					
 					{
-						routes.map(route => {
-							const { id, name, visibleTo, link, svgPath } = route
-
-							const userHasRoles = userRoles.some(role => visibleTo.includes(role))
-
-							if (userHasRoles) {
-
-								return (
-									<ListItem 
-										key={id} 
-										className={name === "Logout" ? stylesSidebar.logout : "link"}
-									>
-										<Link 
-											to={`/${link}`} 
-											className={(splitLocation[1] === "" && link === "home") ? stylesSidebar.active : splitLocation[1] === name.toLowerCase() ? stylesSidebar.active : ""}
-										>
-											<SvgIcon path={svgPath} />
-										</Link>
-										<Tooltip text={name} />
-									</ListItem>
-								)
+						<Container className="list-container">
+							{
+								routes.map(route => {
+									const { id, name, visibleTo, link, svgPath } = route
+		
+									const userHasRoles = userRoles.some(role => visibleTo.includes(role))
+		
+									if (userHasRoles) {
+		
+										return (
+											<ListItem 
+												key={id} 
+												className={name === "Logout" ? stylesSidebar.logout : "link"}
+											>
+												<Link 
+													to={`/${link}`} 
+													className={(splitLocation[1] === "" && link === "home") ? stylesSidebar.active : splitLocation[1] === name.toLowerCase() ? stylesSidebar.active : ""}
+												>
+													<SvgIcon path={svgPath} />
+												</Link>
+											</ListItem>
+										)
+									}
+		
+									return null
+								})
 							}
-
-							return null
-						})
+						</Container>
 					}
 
 				</List>
