@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    padding-left: 0.6rem;
 }
 
 .userContainer .photo {
@@ -65,5 +66,5 @@
 
 .userContainer .btnMore {
     position: absolute;
-    right: 0;
+    right: 1.2rem;
 }

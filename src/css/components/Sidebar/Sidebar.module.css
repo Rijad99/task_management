@@ -104,15 +104,15 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
     border-bottom-left-radius: unset;
     border-top-left-radius: unset;
-    transform: translateX(-98px);
+    transform: translateX(-78px);
     z-index: 1;
   }
   .sidebar .sidebarlist .hideSidebarBtn {
-    right: -42px;
+    right: -11px;
     transform: rotate(-90deg);
   }
   .sidebar.sidebarHidden .hideSidebarBtn {
-    right: -40px;
+    right: -8px;
     transform: rotate(-270deg);
   }
 }/*# sourceMappingURL=Sidebar.module.css.map */

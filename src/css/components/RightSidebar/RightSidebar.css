@@ -35,6 +35,10 @@
   transform: translateX(-1px) rotate(90deg) !important;
 }
 
+.grid.expanded-right .grid-rightsidebar .hide-sidebar-btn {
+  transform: rotate(-270deg);
+}
+
 @media screen and (max-width: 1280px) {
   .grid-rightsidebar {
     right: 0;
