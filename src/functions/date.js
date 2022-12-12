@@ -31,20 +31,6 @@ export const setDate = () => {
     return date
 }
 
-export const setMonthAndTime = () => {
-    const date = new Date()
-    const currentMonth = date.getMonth()
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-
-    hours = hours < 10 ? `0${hours}` : `${hours}`
-    minutes = minutes < 10 ? `0${minutes}` : `${minutes}`
-    
-    const monthAndTime = `${months[currentMonth]} - ${hours}:${minutes}`
-
-    return monthAndTime
-}
-
 export const daysInCurrentMonth = () => {
     const date = new Date()
     const currentYear = date.getUTCFullYear()

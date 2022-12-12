@@ -1,5 +1,5 @@
 //React
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useRef } from "react"
 
 //Custom CSS
@@ -7,7 +7,7 @@ import stylesHelpers from "../../css/Helpers.module.css"
 import "../../css/components/SubHeader/SubHeader.css"
 
 //Functions
-import { daysInCurrentMonth, getNameOfDay, setMonthAndTime } from "../../functions/date"
+import { daysInCurrentMonth, getNameOfDay } from "../../functions/date"
 
 //Custom Components
 import { Container, Span } from "../small/Elements"
@@ -100,11 +100,22 @@ const Day = (props) => {
 
 
 
-const MonthAndTime = ({ data }) => {
+const MonthAndTime = () => {
+    const [time, setTime] = useState(new Date())
+      
+    useEffect(() => {
+        const timerId = setInterval(() => tick(), 1000)
+
+        return () => clearInterval(timerId)
+    })
+    
+    const tick = () => {
+        setTime(new Date())
+    }
     
     return (
         <>
-            <Span text={data} className="month-time"></Span>
+            <Span text={time.toString().split(" ")[4]} className="month-time"></Span>
         </>
     ) 
 }
@@ -119,7 +130,7 @@ const DaysList = () => {
     return (
         <>
             <Container className="grid-days">
-                <MonthAndTime data={setMonthAndTime()} />
+                <MonthAndTime />
                 <div 
                     className="day-items" 
                     ref={sliderContainer} 
